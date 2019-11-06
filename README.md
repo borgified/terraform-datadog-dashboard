@@ -14,4 +14,4 @@ app.dev.memstats.frees
 app.dev.memstats.heap_released
 ...
 ```
-then specify prefx = "app.dev.memstats" as your input.
+then specify prefix = "app.dev.memstats" as your input.
