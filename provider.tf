@@ -1,7 +1,7 @@
 provider "datadog" {
   version = "~> 2.5"
-  api_key = "${var.secrets.api_key}"
-  app_key = "${var.secrets.app_key}"
+  api_key = var.api_key
+  app_key = var.app_key
 }
 
 provider "external" {
