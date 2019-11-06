@@ -20,3 +20,11 @@ starting with the prefix.
 Prerequisites
 - python3 (apt-get install python3)
 - datadog python module (pip3 install datadog)
+
+In your root module, include provider config:
+```
+provider "datadog" {
+  api_key = var.api_key
+  app_key = var.app_key
+}
+```
