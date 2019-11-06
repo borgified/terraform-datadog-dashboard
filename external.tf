@@ -1,5 +1,5 @@
 data "external" "list_metrics" {
-  program = ["python3", "list_metrics.py"]
+  program = ["python3", "${path.module}/list_metrics.py"]
 
   query = {
     api_key = var.secrets.api_key,
