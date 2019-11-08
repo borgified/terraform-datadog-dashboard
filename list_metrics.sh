@@ -3,7 +3,7 @@
 
 set -e
 
-eval "$(jq -r '@sh "API_KEY=\(.api_key) APP_KEY=\(.app_key) PREFIX=\(.prefix) DESCRIPTION=\(.description)"')"
+eval "$(jq -r '@sh "API_KEY=\(.api_key) APP_KEY=\(.app_key) PREFIX=\(.prefix)"')"
 
 RESULT=$(curl -s -X GET \
 -H "DD-API-KEY: ${API_KEY}" \
