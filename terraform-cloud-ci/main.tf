@@ -13,5 +13,5 @@ module "dashboard" {
   prefix      = var.prefix
   api_key     = var.api_key
   app_key     = var.app_key
-  dependency  = [ null_resource.get_jq ]
+  dependency  = [ null_resource.get_jq.id ]
 }
