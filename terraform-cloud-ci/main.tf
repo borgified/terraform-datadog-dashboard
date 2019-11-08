@@ -8,7 +8,8 @@ resource "null_resource" "get_jq" {
 }
 
 module "dashboard" {
-  source  = "../"
+  source  = "borgified/dashboard/datadog"
+  version = "0.1.9"
   prefix      = var.prefix
   api_key     = var.api_key
   app_key     = var.app_key
