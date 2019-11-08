@@ -9,8 +9,8 @@ resource "null_resource" "get_jq" {
 
 module "dashboard" {
   source  = "../"
-  prefix      = "app.dev.memstats"
-  api_key     = "your datadog api key"
-  app_key     = "your datadog app key"
+  prefix      = var.prefix
+  api_key     = var.api_key
+  app_key     = var.app_key
   dependency  = [ null_resource.get_jq ]
 }
