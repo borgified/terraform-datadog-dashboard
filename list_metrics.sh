@@ -3,7 +3,11 @@
 
 set -e
 
-JQ="./jq"
+if [[ $TERRAFORM_CLOUD == "true" ]]; then
+  JQ="./jq"
+else
+  JQ=$(which jq)
+fi
 
 eval "$($JQ -r '@sh "API_KEY=\(.api_key) APP_KEY=\(.app_key) PREFIX=\(.prefix)"')"
 
