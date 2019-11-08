@@ -3,10 +3,11 @@
 
 set -e
 
-if [[ $TERRAFORM_CLOUD == "true" ]]; then
+if ! [ -x "$(command -v jq)" ]; then
+  curl -sL https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o jq && chmod u+x jq
   JQ="./jq"
 else
-  JQ=$(which jq)
+  JQ=$(command -v jq)
 fi
 
 eval "$($JQ -r '@sh "API_KEY=\(.api_key) APP_KEY=\(.app_key) PREFIX=\(.prefix)"')"
