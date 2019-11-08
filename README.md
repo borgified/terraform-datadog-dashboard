@@ -17,11 +17,7 @@ app.dev.memstats.heap_released
 then specify prefix = "app.dev.memstats" as your input to get a dashboard of all metrics
 starting with the prefix.
 
-Prerequisites
-- python3 (apt-get install python3)
-- datadog python module (pip3 install datadog)
-
-In your root module, include provider config:
+In your root module, include provider config (if needed):
 ```
 provider "datadog" {
   api_key = var.api_key

@@ -1,5 +1,5 @@
 data "external" "list_metrics" {
-  program = ["python3", "${path.module}/list_metrics.py"]
+  program = ["bash", "${path.module}/list_metrics.sh"]
 
   query = {
     api_key = var.api_key
