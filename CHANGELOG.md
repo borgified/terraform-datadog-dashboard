@@ -8,3 +8,6 @@ v0.1.7
 v0.1.8
 - added resource to download jq since terraform cloud does not have it
 - modified `list_metrics.py` to use locally "installed" jq
+
+v0.1.9
+- moved logic to download jq, if needed, into `list_metrics.py` where it belongs
