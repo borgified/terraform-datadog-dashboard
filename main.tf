@@ -1,5 +1,5 @@
 resource "datadog_dashboard" "dashboard" {
-  title       = var.prefix
+  title       = var.title
   description = var.description
   layout_type = "ordered"
 
@@ -9,9 +9,9 @@ resource "datadog_dashboard" "dashboard" {
       timeseries_definition {
         title = "${widget.value}"
         request {
-          q = "avg:${var.prefix}.${widget.value}{*}"
+          q = "${var.space_aggregation}:${var.prefix}.${widget.value}{${var.scope}}"
           metadata {
-            expression = "avg:${var.prefix}.${widget.value}{*}"
+            expression = "${var.space_aggregation}:${var.prefix}.${widget.value}{${var.scope}}"
             alias_name = "${widget.value}"
           }
         }
