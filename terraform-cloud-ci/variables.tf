@@ -1,3 +1,9 @@
+variable "title" {
+  description = "title of datadog dashboard"
+  type        = "string"
+  default     = "my dashboard"
+}
+
 variable "api_key" {
   description = "datadog api key"
   type        = "string"
@@ -10,6 +16,18 @@ variable "app_key" {
 
 variable "prefix" {
   description = "metric prefix to pattern match against available metrics in datadog also used for dashboard title"
+  type        = "string"
+}
+
+# https://docs.datadoghq.com/graphing/metrics/introduction/#breaking-down-the-metric-query
+
+variable "space_aggregation" {
+  description = "choices: avg, max, min, sum"
+  type        = "string"
+}
+
+variable "scope" {
+  description = "the set of tags used to choose time series for the query. eg. \"environment:production,service:myservice\""
   type        = "string"
 }
 
