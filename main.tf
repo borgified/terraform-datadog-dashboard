@@ -7,12 +7,12 @@ resource "datadog_dashboard" "dashboard" {
     for_each = split(",", data.external.list_metrics.result.metrics)
     content {
       timeseries_definition {
-        title = "${widget.value}"
+        title = widget.value
         request {
           q = "${var.space_aggregation}:${var.prefix}.${widget.value}{${var.scope}}"
           metadata {
             expression = "${var.space_aggregation}:${var.prefix}.${widget.value}{${var.scope}}"
-            alias_name = "${widget.value}"
+            alias_name = widget.value
           }
         }
       }

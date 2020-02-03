@@ -1,4 +1,8 @@
 # changelog
+v0.1.13
+- fix validation warnings
+  Warning: Interpolation-only expressions are deprecated
+  Warning: Quoted type constraints are deprecated
 v0.1.12
 - Introduced optional var.title for dashboard so it wouldn't have to be tied to var.prefix
 - Parametrized `space_aggregation` and `scope` which are part of the query that defines
