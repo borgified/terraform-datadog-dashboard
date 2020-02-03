@@ -4,7 +4,7 @@ resource "datadog_dashboard" "dashboard" {
   layout_type = "ordered"
 
   dynamic "widget" {
-    for_each = split(",", data.external.list_metrics.result.metrics)
+    for_each = sort(split(",", data.external.list_metrics.result.metrics))
     content {
       timeseries_definition {
         title = widget.value
