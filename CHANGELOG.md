@@ -1,4 +1,8 @@
 # changelog
+v0.1.15
+- Allow user to specify a list of metrics to graph rather than querying them from datadog.
+  If you specify `metrics_list` directly, then it will use this list of metrics to generate
+  the dashboard instead of using the specified prefix to query it from datadog.
 v0.1.14
 - sort widgets
   produce output that is ordered in a consistent manner to avoid idempotency issues
