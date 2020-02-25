@@ -46,9 +46,9 @@ resource "datadog_dashboard" "dashboard_b" {
       timeseries_definition {
         title = widget.value
         request {
-          q = "${var.space_aggregation}:${var.prefix}.${widget.value}{${var.scope}}"
+          q = "${var.space_aggregation}:${var.prefix}.${widget.value}{${local.scope}}"
           metadata {
-            expression = "${var.space_aggregation}:${var.prefix}.${widget.value}{${var.scope}}"
+            expression = "${var.space_aggregation}:${var.prefix}.${widget.value}{${local.scope}}"
             alias_name = widget.value
           }
         }

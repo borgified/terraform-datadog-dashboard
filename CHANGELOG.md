@@ -1,4 +1,6 @@
 # changelog
+v0.1.17
+- bugfix:  `dashboard_b` should also use local.scope
 v0.1.16
 - Add support for template variables. Define `var.template_variable_{name,prefix,default}`
   to filter across all graphs in the dashboard.
