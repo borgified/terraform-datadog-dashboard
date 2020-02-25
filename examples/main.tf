@@ -1,6 +1,6 @@
 module "dashboard_a" {
   source  = "borgified/dashboard/datadog"
-  version = "0.1.14"
+  version = "0.1.16"
   prefix      = "aws.applicationelb"
   api_key     = "your datadog api key"
   app_key     = "your datadog app key"
@@ -10,7 +10,7 @@ module "dashboard_a" {
 
 module "dashboard_b" {
   source  = "borgified/dashboard/datadog"
-  version = "0.1.14"
+  version = "0.1.16"
   prefix      = "aws.applicationelb"
   api_key     = "your datadog api key"
   app_key     = "your datadog app key"

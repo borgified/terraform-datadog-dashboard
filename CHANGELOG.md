@@ -1,4 +1,7 @@
 # changelog
+v0.1.16
+- Add support for template variables. Define `var.template_variable_{name,prefix,default}`
+  to filter across all graphs in the dashboard.
 v0.1.15
 - Allow user to specify a list of metrics to graph rather than querying them from datadog.
   If you specify `metrics_list` directly, then it will use this list of metrics to generate

@@ -42,3 +42,21 @@ variable "metrics_list" {
   type        = string
   default     = ""
 }
+
+variable "template_variable_name" {
+  description = "name of template variable"
+  type        = string
+  default     = "variable1"
+}
+
+variable "template_variable_prefix" {
+  description = "prefix of template variable"
+  type        = string
+  default     = ""
+}
+
+variable "template_variable_default" {
+  description = "default value for template variable"
+  type        = string
+  default     = "*"
+}

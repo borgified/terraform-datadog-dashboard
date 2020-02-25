@@ -1,3 +1,7 @@
+locals {
+  scope = format("%s,$%s", var.scope, var.template_variable_name)
+}
+
 resource "datadog_dashboard" "dashboard_a" {
 
   count = var.metrics_list == "" ? 1 : 0
@@ -12,14 +16,19 @@ resource "datadog_dashboard" "dashboard_a" {
       timeseries_definition {
         title = widget.value
         request {
-          q = "${var.space_aggregation}:${var.prefix}.${widget.value}{${var.scope}}"
+          q = "${var.space_aggregation}:${var.prefix}.${widget.value}{${local.scope}}"
           metadata {
-            expression = "${var.space_aggregation}:${var.prefix}.${widget.value}{${var.scope}}"
+            expression = "${var.space_aggregation}:${var.prefix}.${widget.value}{${local.scope}}"
             alias_name = widget.value
           }
         }
       }
     }
+  }
+  template_variable {
+    name    = var.template_variable_name
+    prefix  = var.template_variable_prefix
+    default = var.template_variable_default
   }
 }
 
@@ -45,5 +54,10 @@ resource "datadog_dashboard" "dashboard_b" {
         }
       }
     }
+  }
+  template_variable {
+    name    = var.template_variable_name
+    prefix  = var.template_variable_prefix
+    default = var.template_variable_default
   }
 }
